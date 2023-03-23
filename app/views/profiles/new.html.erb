@@ -1,0 +1,54 @@
+<section class="profile-section position-relative vh-100">  
+  <div class="bg-text position-absolute ">
+    <div class = "container">
+      <h1 class="text-white">User Profile </h1>
+      <%=form_with url: profiles_path do |form|%>
+
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :first_name %>
+        <%=form.text_field :first_name, class: "form-control", placeholder: "sahil"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :last_name %>
+        <%=form.text_field :last_name, class: "form-control", placeholder: "rathore"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :Date_of_birth %>
+        <%=form.date_field :dob, class: "form-control", placeholder: "2000/01/01"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :Role %>
+        <%=form.text_field :role, class: "form-control", placeholder: Current.user.role, disabled: true%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :Skill %>
+        <%=form.text_field :skill, class: "form-control", placeholder: " ", disabled: true%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :gender%>
+        <%=form.text_field :gender, class: "form-control", placeholder: "male/female"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :phone_number%>
+        <%=form.text_field :phone, class: "form-control", placeholder: "9425xxxxxx"%>
+        </div>
+
+        <div class="col-6 mb-3 text-dark">
+        <%= form. label :Address %>
+        <%=form.text_field :address, class: "form-control", placeholder: "Address"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+          <%= form.submit "update"%>				
+      </div>
+      <%end%>
+    </div>
+  </div>  
+</section>

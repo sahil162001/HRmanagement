@@ -1,0 +1,19 @@
+<section class="leave-section position-relative vh-100">
+  <div class="container">
+
+  <h3 class="text-white">Apply for leaves  <%= link_to "leaves",new_leafe_path,class:"btn btn-warning"%></h3>
+  <% @total=@total-Current.user.leaves.inject(0){|sum,obj| sum+obj.number}%>
+  <h5 class="text-white">total leaves present = <%=@total%> </h5>
+  <div>
+  <h5 class="text-white">Recent Leaves</h5>
+  <% Current.user.leaves.each do |leave| %>
+    Number of Leaves = <%= leave.number %><br>
+    By = <%= Current.user.email %><br>
+    From = <%= leave.start_at %><br>
+    To = <%= leave.end_at %><br>
+    Reason for leave = <%= leave.reason %><br>
+    <hr>       
+
+  <%end%>
+  </div>
+</section>

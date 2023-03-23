@@ -1,0 +1,17 @@
+ <section class="payslip-section position-relative vh-100">
+  <div class = "container">
+    <h4 style="text-align:center;">Welcome <%= Current.user.email%></h4> 
+
+    <%if Current.user.role == 'HR'%>
+        Salary Detail<%= link_to "Detail",new_payslip_path,class:"btn btn-warning"%><br>
+     
+    <%elsif Current.user.role == 'Employee'%>
+        <% Current.user.payslips.each do |pay| %>
+            Credited On = <%= pay.credit%><br>
+            Amount = <%= pay.amount %><br>
+                                          <hr>
+          <%end%>
+    <% end %>
+
+    
+  </div>

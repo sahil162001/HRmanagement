@@ -1,0 +1,42 @@
+<section class="leave-section position-relative vh-100"> 
+  <div class="container">
+
+  <h1 class="text-white"> Apply for leaves </h1>
+  <%= form_with  url: leaves_path do |form|%>
+    <div class="col-3 mb-3 text-white">
+      <%= form. label :number_of_leaves %>
+      <%=form.text_field :number, class: "form-control", placeholder: "0"%>
+    </div>
+  
+    <div class=" col-3 mb-3 text-white">
+      <%= form. label :reason_for_leave %>
+      <%=form.text_field :reason, class: "form-control", placeholder: "reason for leave"%>
+    </div>
+  
+    <div class="text-white">
+      <label for="start_date">Start date:</label><br>
+      <input type="date" id="start_at" name="start_at"required>
+      
+    </div>
+    <div class="text-white">
+      <label for="end_date">End date:</label><br>
+      <input type="date" id="end_at" name="end_at"required>
+      
+    </div>
+    <div class="text-primary">
+      <label for="session">Choose a session:</label>
+      <select name="session" id="session">
+        <option value="session1">session1</option>
+        <option value="session2">session2</option>
+      </select>
+    </div>
+
+    <div class="text-primary">
+      <label for="email">Enter Manager email:</label>
+      <input type="email" id="email" name="email">
+    </div>
+  <div class=" col-3 mb-3">
+    <%= form.submit "Apply"%>			
+  <%end%>
+  </div>
+</section>  

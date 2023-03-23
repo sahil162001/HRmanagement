@@ -1,0 +1,17 @@
+<section class="home-section position-relative vh-100">  
+  <div class="container-xl">  
+    <div>
+    <%= render "shared/carousel"%>
+      <% if Current.user %>
+      <%# loged in as <%= Current.user.email%><br> 
+      <h1 style="text-align:center;">Welcome <%=Current.user.name.capitalize%></h1>
+      
+      <%# <%= button_to "logout", logout_path, method: :delete %> 
+      <h4 class="text-white">List of users</h4>
+      <% @users.each do |u|%>
+        <h4 class="text-white"><%= u.email%><br></h4>
+      <%end%>
+      <%end%>
+    </div>
+  </div>
+</section>  

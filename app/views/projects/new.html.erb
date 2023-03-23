@@ -1,0 +1,30 @@
+<section class="profile-section position-relative vh-100">  
+  <div class="bg-text position-absolute ">
+    <div class = "container">
+      <h1 class="text-white">Project Assigned </h1>
+      <%=form_with url: projects_path do |form|%>
+
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :project_name %>
+        <%=form.text_field :name, class: "form-control", placeholder: "Name"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :Project_discription %>
+        <%=form.text_area :discription, class: "form-control", placeholder: "Discription"%>
+        </div>
+
+        <div class="col-6 mb-3 text-white">
+        <%= form. label :Email %>
+        <%= form.select :user_id,@users.collect {|user| [user.email,user.id]}, class:"form-control"%>
+        </div>
+
+
+        <div class="col-6 mb-3 text-white">
+          <%= form.submit "Assign"%>				
+      </div>
+      <%end%>
+    </div>
+  </div>  
+</section>

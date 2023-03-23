@@ -1,0 +1,33 @@
+<section class="payslip-section position-relative vh-100">
+  <div class = "container">
+    <h1> Salary Detail </h1>
+    <%=form_with model: @pay do |form|%>
+    <%if @pay.errors.any? %>
+    <div class ="alert alert-danger">
+    <% @user.errors.full_messages.each do |message|%>
+        <div><%=message%></div>
+      <%end%>
+      </div>
+    <%end%>
+    <div class=" col-3 mb-3">
+        <%= form. label :Date %>
+        <%=form.date_field :credit, class: "form-control"%>
+      </div>
+
+      <div class=" col-3 mb-3">
+        <%= form. label :Employe_name %>
+       <%= form.select :user_id,@users.collect {|user| [user.email,user.id]}, class:"form-control"%>
+      </div>
+
+      <div class=" col-3 mb-3">
+        <%= form. label :Amount %>
+        <%=form.text_field :amount, class: "form-control", placeholder: "0000"%>
+      </div>
+
+      <div class=" col-3 mb-3">
+        <%= form.submit "Credit"%>
+      </div>
+    <%end%>
+  </div>
+</section>  
+

@@ -1,0 +1,26 @@
+<section class="project-section position-relative vh-100" >
+ <% if Current.user.role == 'Manager'%>
+  <h3 class="text-white"> Assign project:<%=link_to "assign",new_project_path,class:"btn btn-primary"%>
+  <%end%>
+  <div class = "container">
+    <h3 class="text-center text-white ">Projects Assign to Employer <%= link_to Current.user.email,root_path%></h3>
+      <div class="row  g-4">
+      
+          <% Current.user.projects.each do |project| %>
+            <div class="card col-4" >
+              <div class="card-body">
+              <h5 class="card-title text-dark"><%=project.name%></h5>
+              <p class="card-text text-dark"><%=project.discription%></p>
+              <!--<%= link_to "delete", projects_path(project),
+                  method: :delete %>-->
+              </div>
+            </div>
+          <% end %>
+      
+      </div>
+  </div>
+</section>  
+
+
+
+ 
